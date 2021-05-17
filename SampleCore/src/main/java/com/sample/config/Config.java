@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
 public class Config {
 
     @Autowired
-    public SampleService licenceService;
+    public SampleService sampleService;
 
 }
