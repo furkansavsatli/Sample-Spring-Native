@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
+        <version>2.5.2</version>
     </parent>
     <artifactId>sample</artifactId>
     <name>Sample</name>
@@ -13,7 +13,7 @@
     <properties>
         <java.version>11</java.version>
         <cryptographyVersion>2.1.1</cryptographyVersion>
-        <native.build.args>--enable-all-security-services -H:+ReportExceptionStackTraces --allow-incomplete-classpath  </native.build.args>
+        <native.build.args>--enable-all-security-services -H:IncludeResources='.*/file.txt$' -H:+ReportExceptionStackTraces --allow-incomplete-classpath  </native.build.args>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.springframework.experimental</groupId>
             <artifactId>spring-native</artifactId>
-            <version>0.9.2</version>
+            <version>0.10.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,7 +45,7 @@
             <plugin>
                 <groupId>org.springframework.experimental</groupId>
                 <artifactId>spring-aot-maven-plugin</artifactId>
-                <version>0.9.2</version>
+                <version>0.10.1</version>
                 <configuration>
                     <removeSpelSupport>true</removeSpelSupport>
                     <removeYamlSupport>true</removeYamlSupport>
@@ -91,7 +91,7 @@
                     <plugin>
                         <groupId>org.graalvm.nativeimage</groupId>
                         <artifactId>native-image-maven-plugin</artifactId>
-                        <version>21.0.0.2</version>
+                        <version>21.1.0</version>
                         <configuration>
                             <mainClass>com.sample.CommunicationMsApplication</mainClass>
                             <imageName>${project.artifactId}</imageName>
